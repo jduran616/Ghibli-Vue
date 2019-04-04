@@ -1,28 +1,43 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="container">
+
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from './components/Logo.vue'
+import axios from 'axios';
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Logo
   }
 }
 </script>
 
 <style>
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background:-webkit-gradient(linear, left top, right bottom, from(#24C6DC), to(#514A9D));
+    background:-webkit-linear-gradient(top left, #24C6DC, #514A9D);
+    background:-o-linear-gradient(top left, #24C6DC, #514A9D);
+    background:linear-gradient(to bottom right, #24C6DC, #514A9D);
+  font-family: 'Nunito', 'sans-serif';
+}
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
 }
 </style>
