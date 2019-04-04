@@ -1,19 +1,35 @@
 <template>
   <div id="app">
     <div class="container">
-
+      <Logo />
+      <Card />
     </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/Logo.vue'
+import Logo from './components/Logo';
+import Card from './components/Card';
 import axios from 'axios';
 
 export default {
   name: 'app',
   components: {
-    Logo
+    Logo,
+    Card
+  },
+  data() {
+    return {
+      movies: []
+    }
+  },
+  methods: {
+    created() {
+      axios.get('https://ghibliapi.herokuapp.com/films')
+      // .then(res => this.movies = res.data)
+      .then(res => console.log(res.data))
+      .catch(err => console.log(err));
+    }
   }
 }
 </script>
