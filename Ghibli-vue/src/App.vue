@@ -1,16 +1,16 @@
 <template>
   <div id="app">
+    <Logo />
     <div class="container">
-      <Logo />
-      <Card />
+      <Card v-bind:movies="movies" />
     </div>
   </div>
 </template>
 
 <script>
+import axios from 'axios';
 import Logo from './components/Logo';
 import Card from './components/Card';
-import axios from 'axios';
 
 export default {
   name: 'app',
@@ -25,9 +25,8 @@ export default {
   },
   methods: {
     created() {
-      axios.get('https://ghibliapi.herokuapp.com/films')
-      // .then(res => this.movies = res.data)
-      .then(res => console.log(res.data))
+      axios.get('https://ghibliapi.herokuapp.com/films/')
+      .then(res => this.movies = res.data)
       .catch(err => console.log(err));
     }
   }
