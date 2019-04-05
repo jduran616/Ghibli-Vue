@@ -2,7 +2,7 @@
     <div class="container">
         <div class="card" v-bind:key="movie.id" v-for="movie in movies">
             <h1 v-text="movie.title" />
-            <p v-text="movie.description.substring(0,300) + '...'" />
+            <p v-text="movie.description.substring(0,300)" />
         </div>
     </div>
 </template>
