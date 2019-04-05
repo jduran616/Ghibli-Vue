@@ -23,7 +23,7 @@ export default {
   },
   created() {
     axios.get(`https://ghibliapi.herokuapp.com/films/`)
-    .then( res => this.movies = res.data)
+    .then(res => this.movies = res.data)
     .catch(err => console.log(err));
   }
 }
