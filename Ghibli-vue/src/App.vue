@@ -1,9 +1,7 @@
 <template>
   <div id="app">
     <Logo />
-    <div class="container">
-      <Card v-bind:movies="movies" />
-    </div>
+    <Card v-bind:movies="movies" />
   </div>
 </template>
 
@@ -23,12 +21,10 @@ export default {
       movies: []
     }
   },
-  methods: {
-    created() {
-      axios.get('https://ghibliapi.herokuapp.com/films/')
-      .then( res => this.movies = res.data )
-      .catch(err => console.log(err));
-    }
+  created() {
+    axios.get(`https://ghibliapi.herokuapp.com/films/`)
+    .then( res => this.movies = res.data)
+    .catch(err => console.log(err));
   }
 }
 </script>
@@ -39,11 +35,11 @@ export default {
 }
 
 html {
-  background:-webkit-gradient(linear, left top, right bottom, from(#24C6DC), to(#514A9D));
+    background:-webkit-gradient(linear, left top, right bottom, from(#24C6DC), to(#514A9D));
     background:-webkit-linear-gradient(top left, #24C6DC, #514A9D);
     background:-o-linear-gradient(top left, #24C6DC, #514A9D);
     background:linear-gradient(to bottom right, #24C6DC, #514A9D);
-  font-family: 'Nunito', 'sans-serif';
+    font-family: 'Nunito', 'sans-serif';
 }
 
 #app {

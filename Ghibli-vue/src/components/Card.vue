@@ -1,8 +1,8 @@
 <template>
-    <div>
+    <div class="container">
         <div class="card" v-bind:key="movie.id" v-for="movie in movies">
             <h1>{{movie.title}}</h1>
-            <p>{{movie.url}}</p>
+            <p>{{movie.description}}</p>
         </div>
     </div>
 </template>
